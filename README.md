@@ -11,7 +11,8 @@ With it, we can
 - preprocess data (previously obtained from different repositories of Agda and Lean libraries repositories on GitHub and transformed to s-expressions),
 - learn the models on the preprocessed data.
 
-The data is available at the anonymous link given to the reviewers.
+The data is available at [gDrive](https://drive.google.com/drive/folders/1o6QP3Vo_9KR5gB8GPYKeSXDW8pPN8i2U?usp=sharing) and will be published soon at Zenodo.
+
 
 # The repository structure
 
