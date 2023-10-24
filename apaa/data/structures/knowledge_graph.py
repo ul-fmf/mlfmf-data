@@ -8,7 +8,6 @@ import os
 from apaa.other.helpers import NodeType, Other, Locations, MyTypes, EdgeType
 from .agda_tree import AgdaNode, AgdaDefinition, AgdaDefinitionForest
 from .graph_properties import GraphProperties
-from .database import DatabaseManipulation
 
 
 Node = MyTypes.NODE
@@ -671,44 +670,6 @@ class KnowledgeGraph:
     @staticmethod
     def database_edge_type(edge_type: EdgeType):
         return edge_type.value
-
-    def dump_to_database(
-        self,
-        path_to_neo: str = "bolt://localhost:7687",
-        authentication: Tuple[str, str] = ("neo4j", "test"),
-    ):
-        graph = DatabaseManipulation.create_graph_connection(
-            path_to_neo, authentication
-        )
-        # constraints
-        for node_type in list(self.definition_types) + [NodeType.MODULE_LIKE]:
-            DatabaseManipulation.create_uniqueness_constraint(
-                graph, KnowledgeGraph._node_type_to_str(node_type)
-            )
-        # nodes
-        nodes = []
-        for node in self.graph.nodes:
-            labels = self._create_node_labels(node)
-            properties = self._create_node_properties(node)
-            nodes.append((labels, properties))
-        DatabaseManipulation.create_nodes(graph, nodes)
-        # edges
-        edges: List[
-            Tuple[Tuple[List[str], str], Tuple[List[str], str], str, Dict[str, Any]]
-        ] = []
-        for e in self.graph.edges:
-            source_id, sink_id, e_type = e
-            source_labels = self._create_node_labels(source_id)
-            sink_labels = self._create_node_labels(sink_id)
-            edges.append(
-                (
-                    (source_labels, KnowledgeGraph.database_node_id(source_id)),
-                    (sink_labels, KnowledgeGraph.database_node_id(sink_id)),
-                    self.database_edge_type(e_type),
-                    self.graph.edges[e],
-                )
-            )
-        DatabaseManipulation.create_edges(graph, edges)
 
     def _create_node_properties(self, node: Node) -> Dict[str, float]:
         properties: Dict[str, Any] = {
