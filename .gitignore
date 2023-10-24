@@ -1,0 +1,16 @@
+.idea
+__pycache__
+hacks.*
+hacks*
+dumps
+venv
+**/*.agdai
+**/temp*
+*.log
+log*
+dockerisation/*dump
+stuff
+*.pkl
+presentations
+constr_*.txt
+**/*.npy
