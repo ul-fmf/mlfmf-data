@@ -1,9 +1,16 @@
 # MLFMF: Data Sets for Machine Learning for Mathematical Formalization
 
-This is the repository that contains all the code that was used in our paper [MLFMF: Data Sets for Machine Learning for Mathematical Formalization](link to arxiv)
+This is the repository that contains all the code that was used in our paper [MLFMF: Data Sets for Machine Learning for Mathematical Formalization](https://arxiv.org/abs/2310.16005)
 
 ```
-arXiv bibtex
+@misc{bauer2023mlfmf,
+      title={MLFMF: Data Sets for Machine Learning for Mathematical Formalization}, 
+      author={Andrej Bauer and Matej Petković and Ljupčo Todorovski},
+      year={2023},
+      eprint={2310.16005},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 ```
 
 With it, we can 
@@ -11,7 +18,9 @@ With it, we can
 - preprocess data (previously obtained from different repositories of Agda and Lean libraries repositories on GitHub and transformed to s-expressions),
 - learn the models on the preprocessed data.
 
-The data is available at [gDrive](https://drive.google.com/drive/folders/1o6QP3Vo_9KR5gB8GPYKeSXDW8pPN8i2U?usp=sharing) and will be published soon at Zenodo.
+The data is available at [Zenodo](https://zenodo.org/records/10041075).
+
+Reviewer version of the data (will be removed soon): [gDrive](https://drive.google.com/drive/folders/1o6QP3Vo_9KR5gB8GPYKeSXDW8pPN8i2U?usp=sharing).
 
 
 # The repository structure
