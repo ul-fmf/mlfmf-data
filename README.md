@@ -20,8 +20,6 @@ With it, we can
 
 The data is available at [Zenodo](https://zenodo.org/records/10041075).
 
-Reviewer version of the data (will be removed soon): [gDrive](https://drive.google.com/drive/folders/1o6QP3Vo_9KR5gB8GPYKeSXDW8pPN8i2U?usp=sharing).
-
 
 # The repository structure
 
